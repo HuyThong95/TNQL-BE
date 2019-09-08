@@ -32,7 +32,7 @@ public class SignUpController {
             return new ResponseEntity<>("Name taken", HttpStatus.BAD_REQUEST);
         }
         if (landLordRepository.existsByEmail(signUpRequest.getEmail())){
-            return new ResponseEntity<>("Email already used", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("Email used", HttpStatus.BAD_REQUEST);
         }
         LandLord landLord = new LandLord(
                 signUpRequest.getFullName(),
